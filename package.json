@@ -1,0 +1,20 @@
+{
+  "name": "productaddon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rokibulislam/productaddon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rokibulislam/productaddon/issues"
+  },
+  "homepage": "https://github.com/rokibulislam/productaddon#readme"
+}
