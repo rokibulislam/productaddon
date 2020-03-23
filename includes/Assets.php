@@ -20,10 +20,18 @@ class Assets {
 	}
 
 	public function register_admin_scripts() {
+		wp_register_style( 'product_addon_admin_css', ADDON_ASSET_URI . '/js/admin.css', false,  ADDON_VERSION );
+		wp_enqueue_script( 'product_addon_admin_css' );
 
+		wp_register_script( 'product_addon_admin_js', ADDON_ASSET_URI . '/js/admin.js', ['jquery'],  ADDON_VERSION, true );
+		wp_enqueue_script( 'product_addon_admin_js' );
 	}
 
 	public function register_frontend_scripts() {
+		wp_register_style( 'product_addon_frontend_css', ADDON_ASSET_URI . '/js/frontend.css', false,  ADDON_VERSION );
+		wp_enqueue_script( 'product_addon_frontend_css' );
 
+		wp_register_script( 'product_addon_frontend_js', ADDON_ASSET_URI . '/js/frontend.js', ['jquery'],  ADDON_VERSION, true );
+		wp_enqueue_script( 'product_addon_frontend_js' );
 	}
 }

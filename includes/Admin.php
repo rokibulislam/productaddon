@@ -5,7 +5,11 @@ namespace ProductAddon;
 class Admin {
 
 	public function __construct() {
+		 // Register post
 		 add_action( 'init', [ $this, 'register_type_forms' ], 10, 1 );
+		 // Add Meta Box
+		 add_action( 'add_meta_boxes', [ $this, 'add_metabox'  ] );
+         add_action( 'save_post', [ $this, 'save_metabox' ], 10, 2 );
 	}
 
 	public static function init() {
@@ -16,6 +20,23 @@ class Admin {
 		}
 
 		return $instance;
+	}
+
+	public function add_metabox() {
+		add_meta_box(
+            'product-form-meta',
+            __( 'Product Form Meta', 'textdomain' ),
+            [  $this, 'render_metabox' ],
+            'product_forms'
+        );
+	}
+
+	public function render_metabox() {
+
+	}
+
+	public function save_metabox( $post_id, $post ) {
+
 	}
 
 	public function register_type_forms() {
@@ -54,17 +75,7 @@ class Admin {
 				'rewrite'             => true,
 				'capability_type'     => 'post',
 				'supports'            => array(
-					'title',
-					'editor',
-					'author',
-					'thumbnail',
-					'excerpt',
-					'custom-fields',
-					'trackbacks',
-					'comments',
-					'revisions',
-					'page-attributes',
-					'post-formats',
+					'title'
 				),
 			);
 
