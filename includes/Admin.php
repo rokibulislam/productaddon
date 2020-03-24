@@ -10,6 +10,14 @@ class Admin {
 		 // Add Meta Box
 		 add_action( 'add_meta_boxes', [ $this, 'add_metabox'  ] );
          add_action( 'save_post', [ $this, 'save_metabox' ], 10, 2 );
+
+         // order
+        add_filter('woocommerce_order_item_display_meta_value', [ $this, 'order_item_display_meta_value' ], 10, 1 );
+        add_action('woocommerce_before_order_itemmeta', [ $this, 'order_item_line_item_html' ], 10, 3);
+        add_action('woocommerce_before_save_order_items', [ $this, 'before_save_order_items' ], 10, 2);
+        add_action('woocommerce_order_item_get_formatted_meta_data', [ $this, 'order_item_get_formatted_meta_data' ], 10, 2);
+        add_filter('manage_product_posts_columns', [ $this, 'manage_products_columns' ], 20, 1);
+        add_action('manage_product_posts_custom_column', [ $this, 'manage_products_column' ], 10, 2);
 	}
 
 	public static function init() {
@@ -36,6 +44,33 @@ class Admin {
 	}
 
 	public function save_metabox( $post_id, $post ) {
+
+	}
+
+	public function order_item_display_meta_value( $meta_value ) {
+
+		return $meta_value;
+	}
+
+	public function order_item_line_item_html( $item_id, $item, $order ) {
+
+	}
+
+	public function before_save_order_items( $order_id, $items ) {
+
+	}
+
+	public function order_item_get_formatted_meta_data( $formatted_meta, $item ) {
+
+		return $formatted_meta;
+	}
+
+	public function manage_products_columns( $columns ) {
+
+		return $columns;
+	}
+
+	public function manage_products_column( $column_name, $post_id ) {
 
 	}
 
