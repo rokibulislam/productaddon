@@ -88,7 +88,7 @@ class Product_Addon {
 	public function  includes() {
 		require_once ADDON_INCLUDES . '/functions.php';
 		require_once ADDON_INCLUDES . '/Admin.php';
-		require_once ADDON_INCLUDES . '/Ajax.php';
+		//require_once ADDON_INCLUDES . '/Ajax.php';
 		require_once ADDON_INCLUDES . '/Assets.php';
 		require_once ADDON_INCLUDES . '/Form.php';
 		require_once ADDON_INCLUDES . '/Frontend.php';
@@ -98,14 +98,14 @@ class Product_Addon {
 	}
 
 	public function init_classes() {
-		$this->container[''] = new  \ProductAddon\Admin();
-		$this->container[''] = new  \ProductAddon\Ajax();
-		$this->container[''] = new  \ProductAddon\Assets();
-		$this->container[''] = new  \ProductAddon\Form();
-		$this->container[''] = new  \ProductAddon\Frontend();
-		$this->container[''] = new  \ProductAddon\OrderMeta();
-		$this->container[''] = new  \ProductAddon\ProductMeta();
-		$this->container['settings'] = new  \ProductAddon\Settings();
+		$this->container['admin'] = new  \ProductAddon\Admin();
+		//$this->container[''] = new  \ProductAddon\Ajax();
+		$this->container['assets'] = new  \ProductAddon\Assets();
+		//$this->container['forms'] = new  \ProductAddon\Form();
+		$this->container['frontend'] = new  \ProductAddon\Frontend();
+		//$this->container['ordermeta'] = new  \ProductAddon\OrderMeta();
+		//$this->container['productmeta'] = new  \ProductAddon\ProductMeta();
+		//$this->container['settings'] = new  \ProductAddon\Settings();
 	}
 
 	public function init_plugin() {

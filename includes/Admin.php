@@ -6,10 +6,10 @@ class Admin {
 
 	public function __construct() {
 		 // Register post
-		 add_action( 'init', [ $this, 'register_type_forms' ], 10, 1 );
+		// add_action( 'init', [ $this, 'register_type_forms' ], 10, 1 );
 		 // Add Meta Box
-		 add_action( 'add_meta_boxes', [ $this, 'add_metabox'  ] );
-         add_action( 'save_post', [ $this, 'save_metabox' ], 10, 2 );
+		// add_action( 'add_meta_boxes', [ $this, 'add_metabox'  ] );
+        // add_action( 'save_post', [ $this, 'save_metabox' ], 10, 2 );
 
          // order
         add_filter('woocommerce_order_item_display_meta_value', [ $this, 'order_item_display_meta_value' ], 10, 1 );
